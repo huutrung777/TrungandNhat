@@ -62,10 +62,11 @@
 <body>
 <div class="container mt-4">
   <h2>Danh sách Tài khoản</h2>
-  
-  <c:if test="${not empty mess}">
-    <p class="message">${mess}</p>
+
+  <c:if test="${not empty param.mess}">
+    <p class="message">${param.mess}</p>
   </c:if>
+
   <a class="btn btn-primary mb-3" href="/view/admin/home.jsp">🏠 Trang chủ</a>
 
   <form action="/tai-khoan" method="get" class="search-form">

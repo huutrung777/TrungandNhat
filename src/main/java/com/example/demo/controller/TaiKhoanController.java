@@ -10,7 +10,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
 
@@ -126,10 +125,8 @@ public class TaiKhoanController extends HttpServlet {
         TaiKhoan taiKhoan = taiKhoanService.findById(id);
 
         if (taiKhoan != null) {
-            taiKhoan.setUsername(request.getParameter("username"));
-            taiKhoan.setPassword(request.getParameter("password"));
             taiKhoan.setEmail(request.getParameter("email"));
-            taiKhoan.setRole(request.getParameter("role"));
+            taiKhoan.setPassword(request.getParameter("password"));
 
             boolean isSuccess = taiKhoanService.update(taiKhoan);
             String mess = isSuccess ? "Cập nhật thành công" : "Cập nhật thất bại";
@@ -138,6 +135,7 @@ public class TaiKhoanController extends HttpServlet {
             response.sendRedirect("/tai-khoan?mess=" + URLEncoder.encode("Tài khoản không tồn tại", "UTF-8"));
         }
     }
+
 
     private void deleteById(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("deleteId"));

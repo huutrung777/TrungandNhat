@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 
 public class TaiKhoanDao {
 
-    // Thêm tài khoản mới
     public boolean insertTaiKhoan(TaiKhoan taiKhoan) {
         String sql = "INSERT INTO tai_khoan(username, email, password, role) VALUES (?,?,?,?)";
         try (Connection connection = ConnectDB.getConnectDB();
@@ -25,7 +24,6 @@ public class TaiKhoanDao {
         }
     }
 
-    // Kiểm tra username/email đã tồn tại chưa
     public boolean exists(String username, String email) {
         String sql = "SELECT id FROM tai_khoan WHERE username=? OR email=?";
         try (Connection connection = ConnectDB.getConnectDB();
@@ -40,8 +38,6 @@ public class TaiKhoanDao {
             return false;
         }
     }
-
-    // Kiểm tra login
     public TaiKhoan checkLogin(String username, String password) {
         String sql = "SELECT id, username, password, email, role FROM tai_khoan WHERE username=? AND password=?";
         try (Connection connection = ConnectDB.getConnectDB();
