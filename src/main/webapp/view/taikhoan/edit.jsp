@@ -21,8 +21,7 @@
 
         <div class="mb-3">
           <label class="form-label">Username</label>
-          <input type="text" name="username" class="form-control"
-                 value="${taiKhoan.username}" required/>
+          <input type="text" class="form-control" value="${taiKhoan.username}" disabled/>
         </div>
 
         <div class="mb-3">
@@ -39,14 +38,13 @@
 
         <div class="mb-3">
           <label class="form-label">Role</label>
-          <select name="role" class="form-select" required>
-            <option value="admin" ${taiKhoan.role eq 'admin' ? 'selected' : ''}>Admin</option>
-            <option value="khachhang" ${taiKhoan.role eq 'khachhang' ? 'selected' : ''}>Khách hàng</option>
-          </select>
+          <input type="text" class="form-control" value="${taiKhoan.role}" disabled/>
         </div>
+
         <button type="submit" class="btn btn-success w-100 mb-2">Cập nhật</button>
         <a href="/tai-khoan" class="btn btn-secondary w-100">Quay về danh sách</a>
       </form>
+
     </div>
   </div>
 </div>

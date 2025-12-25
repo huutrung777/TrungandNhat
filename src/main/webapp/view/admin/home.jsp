@@ -118,7 +118,7 @@
     <h1>🎓 Quản Trị Hệ Thống </h1>
 </header>
 <nav>
-    <a href="/home">Trang chủ</a>
+    <a href="/view/admin/home.jsp">Trang chủ</a>
     <a href="/logout">Đăng xuất</a>
 </nav>
 <div class="container">

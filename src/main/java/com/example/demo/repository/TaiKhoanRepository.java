@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TaiKhoanRepository implements ITaiKhoanRepository {
-    private static final String login = "SELECT id, username, password, email, role FROM tai_khoan WHERE username = ?";
     private final String SELECT_ALL = "select * from tai_khoan;";
     private final String INSERT_INTO = "INSERT INTO tai_khoan(username,password,email,role) VALUES(?,?,?,?)";
     private final String DELETE_BY_ID = "delete from tai_khoan where id = ?;";
